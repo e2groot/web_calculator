@@ -1,0 +1,34 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.10'
+}
+
+group 'to.dev.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+
+apply plugin: 'application'
+
+mainClassName = 'to.dev.example.MainAppKt'
+ext.dropwizard_version = '1.1.4'
+
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "io.dropwizard:dropwizard-core:$dropwizard_version"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+run {
+    args = ['server', 'config/local.yml']
+}
