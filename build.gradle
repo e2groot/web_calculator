@@ -41,3 +41,11 @@ compileTestKotlin {
 run {
     args = ['server', 'config/local.yml']
 }
+
+jar {
+    manifest {
+        attributes (
+                'Main-Class': 'to.dev.example.MainAppKt'
+        )
+    }
+}
