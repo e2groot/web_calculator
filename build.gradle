@@ -19,12 +19,11 @@ repositories {
 }
 
 apply plugin: 'application'
+apply plugin: 'java'
 apply plugin: 'com.bmuschko.docker-remote-api'
 
 mainClassName = 'to.dev.example.MainAppKt'
 ext.dropwizard_version = '1.1.4'
-
-
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
@@ -48,4 +47,5 @@ jar {
                 'Main-Class': 'to.dev.example.MainAppKt'
         )
     }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
