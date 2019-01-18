@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:2.2'
+    }
+}
+
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.10'
 }
@@ -9,12 +18,12 @@ repositories {
     mavenCentral()
 }
 
-
-
 apply plugin: 'application'
+apply plugin: 'com.bmuschko.docker-remote-api'
 
 mainClassName = 'to.dev.example.MainAppKt'
 ext.dropwizard_version = '1.1.4'
+
 
 
 dependencies {
