@@ -1,3 +1,14 @@
 docker build -f docker/Dockerfile -t e2groot/web-calculator-image:master .
+
 docker push e2groot/web-calculator-image:master
-docker run -p 8080:8080 -p 8081:8081 -i -t <image id> /bin/bash
+
+docker run -p 8080:8080 -p 8081:8081 -it <image id> /bin/bash
+
+#log into container (is 'exit' safe from stopping container when 'exit' entered
+docker exec <container_id> /bin/bash
+
+#Gets ip of docker host (on Mac or Windows--port-forwarding doesn't work using 'localhost')
+docker-machine ip default
+
+#test
+curl "192.168.99.100:8081/multiply?a=5&b=10"
