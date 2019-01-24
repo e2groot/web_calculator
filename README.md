@@ -13,7 +13,12 @@ The image of this runnable application can be found here:
 Test the application by running the commands:
 
 #15 should be the answer
+
 curl "localhost:8080/add?a=5&b=10"
 
+
+
+
 #50 should be the answer
+
 curl "localhost:8080/multiply?a=5&b=10"
