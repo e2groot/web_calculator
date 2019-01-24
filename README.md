@@ -2,7 +2,7 @@
 Simple web calculator accessible over HTTP.
 
 This calculator was an example I followed to further understand Kotlin and how it works with DropWizard.
-Unit tests will eventually be added, but this was just for my satisfaction.
+Unit tests will eventually be added, but this was just to try it out for my interest and curiosity.
 I took it a little further to learn how to encapsulate this as a Docker image and run as a container.
 
 
